@@ -1,13 +1,29 @@
 saldo = 0
 dinheiro = 0
-senha = str(input('Crie uma senha:'))
-chave = str(input('Digite uma palavra chave: '))
-caixa = str(input('Digite sua senha:'))
+senha = input('Crie uma senha:')
+chave = input('Digite uma palavra chave: ')
+caixa = input('Digite sua senha:')
 #Validação da senha e saldo
+#Senha Correta
+if caixa == senha:
+    print(f'Valor: R${dinheiro},00')
+    while saldo == 3 or 2:
+        saldo = int(input("Para sacar digite 3, para adicionar digite 2: "))
+        if saldo == 3:
+            sacar = float(input('Digite o valor: R$'))
+            menos = dinheiro - sacar
+            dinheiro = menos
+            print(f"Valor atual R${menos}0")
+        if saldo == 2:
+            add = float(input('Digite o valor: R$'))
+            s = dinheiro + add
+            dinheiro = s
+            print(f'Valor atual R${s}0')
+#Senha Errada
 if caixa != senha:
-    erro = str('Digite a palavra chave: ')
-    if erro == chave:
-        print("Correto!")
+    for c in range(2, 0,-1):
+        print(f"Senha errada, {c} tentativas!!")
+        caixa = input('Digite sua senha:')
         if caixa == senha:
             print(f'Valor: R${dinheiro},00')
             while saldo == 3 or 2:
@@ -22,9 +38,46 @@ if caixa != senha:
                     s = dinheiro + add
                     dinheiro = s
                     print(f'Valor atual R${s}0')
+    erro = str(input('Digite a palavra chave: '))
+    #Chave Certa
+    if erro == chave:
+        print("Correto!")
+        print(f'Valor: R${dinheiro},00')
+        while saldo == 3 or 2:
+            saldo = int(input("Para sacar digite 3, para adicionar digite 2: "))
+            if saldo == 3:
+                sacar = float(input('Digite o valor: R$'))
+                menos = dinheiro - sacar
+                dinheiro = menos
+                print(f"Valor atual R${menos}0")
+            if saldo == 2:
+                add = float(input('Digite o valor: R$'))
+                s = dinheiro + add
+                dinheiro = s
+                print(f'Valor atual R${s}0')
+    #Chave Errada
     if erro != chave:
-        for c in range(3):
-            print("VOCE TEM MAIS 2 CHANCE")
+        for c in range(3, 0,-1):
+            print(f"Chave errada!! {c} tentativas")
+            erro = str(input('Digite a palavra chave: '))
+            if erro == chave:
+                print("Correto!")
+                print(f'Valor: R${dinheiro},00')
+                while saldo == 3 or 2:
+                    saldo = int(input("Para sacar digite 3, para adicionar digite 2: "))
+                    if saldo == 3:
+                        sacar = float(input('Digite o valor: R$'))
+                        menos = dinheiro - sacar
+                        dinheiro = menos
+                        print(f"Valor atual R${menos}0")
+                    if saldo == 2:
+                        add = float(input('Digite o valor: R$'))
+                        s = dinheiro + add
+                        dinheiro = s
+                        print(f'Valor atual R${s}0')
+                    
+        print("As tentativas acabaram, sua conta foi bloqueada")
+        
         
 
     
