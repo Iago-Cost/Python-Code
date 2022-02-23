@@ -1,3 +1,5 @@
+#Feito por iago com ideia de julio
+
 saldo = 0
 dinheiro = 0
 senha = input('Crie uma senha:')
@@ -77,7 +79,6 @@ if caixa != senha:
                         print(f'Valor atual R${s}0')
                     
         print("As tentativas acabaram, sua conta foi bloqueada")
-        
         
 
     
